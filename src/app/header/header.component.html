@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+                <img src="/src/app/images/logo-white.png" alt="" width="70px">
+              </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a *ngIf="role != '1' && role != '2'" class="nav-link" routerLink="">Home
+                          <span class="sr-only">(current)</span>
+                        </a>
+                  </li>
+                  <li *ngIf="role != '1' && role != '2'" class="nav-item">
+                      <a class="nav-link" routerLink="/about">About</a>
+                  </li>
+                  <li *ngIf="role != '1' && role != '2'" class="nav-item">
+                      <a class="nav-link" routerLink="/login">Login</a>
+                  </li>
+                  <li *ngIf="role != '1' && role != '2'" class="nav-item">
+                      <a class="nav-link" routerLink="/register">Register</a>
+                  </li>
+                  <li *ngIf="role == '2'" class="nav-item">
+                          <a class="nav-link" routerLink="/pregled-restorana">Pregled restorana</a>
+                      </li>
+                  <li *ngIf="role == '1'" class="nav-item">
+                              <a class="nav-link" routerLink="/pregled-jela">Pregled jela</a>
+                      </li>
+                  <li *ngIf="role == '1'" class="nav-item">
+                              <a class="nav-link" routerLink="/pregled-porudzbina">Pregled porudzbina</a>
+                      </li>
+                      <li *ngIf="role == '2'" class="nav-item">
+                              <a class="nav-link" routerLink="/pregled-svih-porudzbina">Pregled porudzbina</a>
+                      </li>
+                      <li *ngIf="role == '2'" class="nav-item">
+                              <a class="nav-link" routerLink="/pregled-svih-jela">Pregled jela</a>
+                      </li>
+                      <li *ngIf="role == '2'" class="nav-item">
+                        <a class="nav-link" routerLink="/pregled-usera">Pregled usera</a>
+                    </li>
+                      <li *ngIf="role == '1' || role == '2'"  class="nav-item">
+                              <a class="nav-link" (click)="logout()" >Logout</a>
+                      </li>
+                </ul>
+          </div>
+        </div>
+      </nav>

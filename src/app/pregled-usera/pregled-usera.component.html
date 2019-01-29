@@ -1,0 +1,38 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    Pregled korisnika</div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Datum rođenja</th>
+            <th>Telefon</th>
+            <th>Email</th>
+            <th>Akcije</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of useri">
+            <td>{{user.IME}}</td>
+            <td>{{user.PREZIME}}</td>
+            <td>{{user.DATUMRODJENJA}}</td>
+            <td>{{user.TELEFON}}</td>
+            <td>{{user.EMAIL}}</td>
+            <td><a class="btn btn-primary" [routerLink]="['/edit-user', user.USERID]">Edit</a></td>
+          </tr>
+        </tbody>
+      </table>
+     <div *ngIf="message == 1">
+        <p>Nema učitanih usera</p>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>

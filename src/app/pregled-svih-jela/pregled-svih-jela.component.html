@@ -1,0 +1,38 @@
+<div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-table"></i>
+      Jela</div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Restoran</th>
+              <th>Naziv jela</th>
+              <th>Cena</th>
+              <th>Opis</th>
+              <th colspan="2">Akcije</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let jelo of jela">
+              <td>{{jelo.NAZIV}}</td>
+              <td>{{jelo.NAZIVJELA}}</td>
+              <td>{{jelo.CENA}}</td>
+              <td>{{jelo.OPIS}}</td>
+              <td><button (click)="izbrisiJelo(jelo.IDJELA)" class="btn btn-danger">Obrisi</button>
+              </td>
+              <td><a class="btn btn-primary" [routerLink]="['/edit-jela', jelo.IDJELA]">Edit</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="message == 1">
+          <p>Nema učitanih jela</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-primary btn-block" routerLink="/create-jela"
+        style="background-image: linear-gradient(to right, #e67e22, #f2aa6a, #edc6a3); width: 20%;">Kreiraj jelo</a>
+      </div>
+  </div>

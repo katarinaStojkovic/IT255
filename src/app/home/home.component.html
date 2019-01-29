@@ -1,0 +1,101 @@
+
+<header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active" style="background-image: url('https://static.techspot.com/images2/news/bigimage/2014/04/2014-04-04-image-12.jpg')">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="display-4">Dobrodošli</h2>
+            <p class="lead">Vi poručite, ostalo je naša briga</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+    </div>
+  </header>
+
+  <div class="container text-center">
+        <h3>Naš tim</h3>
+        <p><em>Mi volimo ono što radimo</em></p>
+        <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <p><strong>Petar Petrović</strong></p><br>
+            <img src="/src/app/images/person1.jpg" alt="Random Name" width="255" height="255">
+          </div>
+          <div class="col-sm-4">
+            <p><strong>Marija Marić</strong></p><br>
+            <img src="/src/app/images/person3.jpg" alt="Random Name" width="255" height="255">
+          </div>
+          <div class="col-sm-4">
+            <p><strong>Nikola Nikolić</strong></p><br>
+            <img src="/src/app/images/person4.jpg" alt="Random Name" width="255" height="255">
+          </div>
+
+        </div>
+      </div>
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Naručivanje</h5>
+          <form  [formGroup]="form" (ngSubmit)="submitData()">
+
+            <div class="form-group">
+              <label for="pwd">Restoran</label>
+            <select formControlName="restoran" (change)="getSveJelaPoRestoranu($event.target.value)"  class="form-control form-control-lg" >
+              <option *ngFor = "let restoran of restorani" value={{restoran.IDRESTORANA}}>{{ restoran.NAZIV }}</option>
+            </select>
+          </div>
+
+              <div class="form-group">
+                <label for="pwd">Jelo</label>
+              <select formControlName="jelo" class="form-control form-control-lg" >
+                 <option (click)="ocisti()">Izaberite</option>
+                <option *ngFor = "let jelo of jela" value={{jelo.IDJELA}}>{{ jelo.NAZIVJELA + " - " + jelo.CENA + " dinara"}}</option>
+              </select>
+            </div>
+
+            <div class="form-label-group">
+              <label for="datumIsporuke">Datum isporuke</label>
+              <input formControlName="datumIsporuke" type="date" id="datumIsporuke" class="form-control" placeholder="Datum isporuke" required="required">
+            </div>
+            <br>
+            <div class="form-label-group">
+              <label for="vremeIsporuke">Vreme isporuke</label>
+              <input formControlName="vremeIsporuke" type="time" id="vremeIsporuke" class="form-control" placeholder="Vreme isporuke" required="required">
+            </div>
+            <br>
+            <div class="form-label-group">
+              <label for="adresa">Adresa</label>
+              <input formControlName="adresa" type="text" id="adresa" class="form-control" placeholder="Adresa" required="required">
+            </div>
+            <br>
+            <div class="form-label-group">
+              <label for="kolicina">Kolicina</label>
+              <input formControlName="kolicina" type="text" id="kolicina" class="form-control" placeholder="Kolicina" required="required">
+            </div>
+            <br>
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" style="background-image: linear-gradient(to right, #e67e22, #f2aa6a, #edc6a3);" type="submit">Naručite</button>
+          </form>
+          <div *ngIf="homeError == 1" class="alert alert-danger">
+            <ul>
+              <li>Sva polja moraju biti validno popunjena!</li>
+            </ul>
+          </div>
+          <div *ngIf="message == 1" class="alert alert-succes">
+            <ul>
+              <li>Uspešno ste izvršili porudžbinu!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <br><br><br><br>
+    </div>
+  </div>

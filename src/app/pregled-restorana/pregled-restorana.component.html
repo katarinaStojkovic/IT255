@@ -1,0 +1,35 @@
+<div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-table"></i>
+      Restorani</div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Naziv</th>
+              <th>PIB</th>
+              <th>Adresa</th>
+              <th colspan="2">Akcije</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let restoran of restorani">
+                  <td>{{restoran.NAZIV}}</td>
+                  <td>{{restoran.PIB}}</td>
+                  <td>{{restoran.ADRESA}}</td>
+                  <td><button (click)="izbrisiRestoran(restoran.IDRESTORANA)" class="btn btn-danger">Obrisi</button>
+                  </td>
+                 </tr>
+          </tbody>
+        </table>
+        <div *ngIf="message == 1">
+          <p>Nema učitanih restorana</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-primary btn-block" routerLink="/create-restoran"
+        style="background-image: linear-gradient(to right, #e67e22, #f2aa6a, #edc6a3); width: 20%;">Kreiraj restoran</a>
+      </div>
+  </div>

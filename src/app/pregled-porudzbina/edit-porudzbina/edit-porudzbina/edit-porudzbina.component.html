@@ -1,0 +1,42 @@
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">Porudzbine</h5>
+              <form  [formGroup]="form" (ngSubmit)="submitData()">
+
+                <div class="form-label-group">
+                    <label for="datumIsporuke">Datum isporuke</label>
+                    <input formControlName="datumIsporuke" type="date" id="datumIsporuke" class="form-control" placeholder="Datum isporuke" required="required">
+                  </div>
+             
+                  <div class="form-label-group">
+                    <label for="vremeIsporuke">Vreme isporuke</label>
+                    <input formControlName="vremeIsporuke" type="time" id="vremeIsporuke" class="form-control" placeholder="Vreme isporuke" required="required">
+                  </div>
+  
+                  <div class="form-label-group">
+                    <label for="adresa">Adresa</label>
+                    <input formControlName="adresa" type="text" id="adresa" class="form-control" placeholder="Adresa" required="required">
+                  </div>
+    
+                  <div class="form-label-group">
+                    <label for="kolicina">Kolicina</label>
+                    <input formControlName="kolicina" type="text" id="kolicina" class="form-control" placeholder="Kolicina" required="required">
+                  </div>
+    
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" style="background-image: linear-gradient(to right, #e67e22, #f2aa6a, #edc6a3);" type="submit">Azuriraj porudzbinu</button>
+              </form>
+              <div *ngIf="error == 1" class="alert alert-danger">
+                <ul>
+                  <li>Sva polja moraju biti validno popunjena!</li>
+                </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

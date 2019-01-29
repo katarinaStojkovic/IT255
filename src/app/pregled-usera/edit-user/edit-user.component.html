@@ -1,0 +1,45 @@
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Porudzbine</h5>
+            <form  [formGroup]="form" (ngSubmit)="submitData()">
+
+              <div class="form-label-group">
+                  <label for="ime">ime</label>
+                  <input formControlName="ime" type="text" id="ime" class="form-control" placeholder="Ime" required="required">
+                </div>
+           
+                <div class="form-label-group">
+                  <label for="prezime">Prezime</label>
+                  <input formControlName="prezime" type="text" id="prezime" class="form-control" placeholder="prezime" required="required">
+                </div>
+
+                <div class="form-label-group">
+                  <label for="datumrodjenja">Datum rođenja</label>
+                  <input formControlName="datumrodjenja" type="date" id="datumrodjenja" class="form-control" placeholder="datumrodjenja" required="required">
+                </div>
+  
+                <div class="form-label-group">
+                  <label for="telefon">Telefon</label>
+                  <input formControlName="telefon" type="number" id="telefon" class="form-control" placeholder="telefon" required="required">
+                </div>
+                <div class="form-label-group">
+                  <label for="email">Email</label>
+                  <input formControlName="email" type="email" id="email" class="form-control" placeholder="email" required="required">
+                </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" style="background-image: linear-gradient(to right, #e67e22, #f2aa6a, #edc6a3);" type="submit">Azuriraj porudzbinu</button>
+            </form>
+            <div *ngIf="error == 1" class="alert alert-danger">
+              <ul>
+                <li>Sva polja moraju biti validno popunjena!</li>
+              </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

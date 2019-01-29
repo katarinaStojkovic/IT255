@@ -1,0 +1,38 @@
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">Jelo</h5>
+              <form  [formGroup]="form" (ngSubmit)="updateJelo()">
+
+
+                <div class="form-label-group">
+                  <label for="naziv">Naziv jela</label>
+                  <input formControlName="nazivjela" type="text" id="naziv" class="form-control" placeholder="Naziv jela" required="required">
+                </div>
+           
+                <div class="form-label-group">
+                  <label for="cena">Cena</label>
+                  <input formControlName="cena" type="text" id="cena" class="form-control" placeholder="Cena" required="required">
+                </div>
+  
+                <div class="form-label-group">
+                    <label for="opis">Opis</label>
+                    <input formControlName="opis" type="text" id="opis" class="form-control" placeholder="Opis" required="required">
+                  </div>
+    
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" style="background-image: linear-gradient(to right, #e67e22, #f2aa6a, #edc6a3);" type="submit">Azuriraj jelo</button>
+              </form>
+              <div *ngIf="error == 1" class="alert alert-danger">
+                <ul>
+                  <li>Sva polja moraju biti validno popunjena!</li>
+                </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

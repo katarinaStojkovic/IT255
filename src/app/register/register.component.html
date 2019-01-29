@@ -1,0 +1,90 @@
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div class="card card-signin flex-row my-5">
+            <div class="card-img-left d-none d-md-flex">
+               <!-- Background image for card set in CSS! -->
+            </div>
+            <div class="card-body">
+              <form  [formGroup]="form" (ngSubmit)="submitData()">
+
+                  <div class="form-label-group">
+                      <input formControlName="naziv" type="text" id="naziv" class="form-control" placeholder="Naziv restorana" required="required">
+                      <label for="naziv">Naziv restorana</label>
+                    </div>
+
+                    <div class="form-label-group">
+                        <input formControlName="pib" type="text" id="pib" class="form-control" placeholder="PIB" required="required">
+                        <label for="pib">PIB</label>
+                      </div>
+  
+                      <div class="form-label-group">
+                          <input formControlName="adresa" type="text" id="adresa" class="form-control" placeholder="Adresa" required="required">
+                          <label for="adresa">Adresa</label>
+                        </div>
+    
+                  <div class="form-label-group">
+                      <input formControlName="ime" type="text" id="ime" class="form-control" placeholder="Ime" required="required">
+                      <label for="ime">Ime</label>
+                    </div>
+                  
+                    <div class="form-label-group">
+                        <input formControlName="prezime" type="text" id="prezime" class="form-control" placeholder="Prezime" required="required">
+                        <label for="prezime">Prezime</label>
+                      </div>
+                      
+                      <div class="form-label-group">
+                          <input formControlName="datumrodjenja" type="date" id="datumRodjenja" class="form-control" placeholder="DatumRodjenja" required="required">
+                          <label for="datumRodjenja">Datum rođenja</label>
+                        </div>
+
+                    
+                          <div class="form-label-group">
+                              <input formControlName="telefon" type="text" id="telefon" class="form-control" placeholder="Telefon" required="required">
+                              <label for="telefon">Telefon</label>
+                            </div>
+
+                <div class="form-label-group">
+                  <input formControlName="username" type="text" id="username" class="form-control" placeholder="Username" required="required">
+                  <label for="username">Username</label>
+                </div>
+  
+                <div class="form-label-group">
+                  <input formControlName="email" type="email" id="email" class="form-control" placeholder="Email" required="required">
+                  <label for="email">Email</label>
+                </div>
+                
+                <hr>
+  
+                <div class="form-label-group">
+                  <input formControlName="password" type="password" id="password" class="form-control" placeholder="Password" required="required">
+                  <label for="password">Password</label>
+                </div>
+                <div *ngIf="registerError == 1" class="alert alert-danger">
+                    <ul>
+                      <li>Sva polja moraju biti validno popunjena!</li>
+                    </ul>
+                  </div>
+                  <div *ngIf="message == 1" class="alert alert-succes">
+                    <ul>
+                      <li>Uspešno ste kreirali korisnika!
+                        Možete se logovati
+                      </li>
+                    </ul>
+                  </div>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" style="background-image: linear-gradient(to right, #e67e22, #f2aa6a, #edc6a3);">Register</button>
+                <a class="d-block text-center mt-2 small" routerLink="/login">Sign In</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

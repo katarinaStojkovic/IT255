@@ -1,0 +1,25 @@
+.main-nav{
+	list-style: none;
+	float: right;
+	margin-top: 60px;
+}
+
+.main-nav li{
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.main-nav a{
+	color:white;
+	text-decoration: none;
+	font-size: 90%;
+	font-weight: bold;
+
+}
+
+.main-nav li a:hover{
+	color: #e67e22;
+	border-bottom: 2px solid #e67e22;
+	transition: all 0.5s ease-in;
+	padding: 15px 0; 
+}

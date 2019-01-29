@@ -1,0 +1,45 @@
+<div class="card mb-3">
+    <div class="card-header">
+      <i class="fas fa-table"></i>
+      Jela</div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Restoran</th>
+              <th>Naziv jela</th>
+              <th>Cena</th>
+              <th>Opis</th>
+              <th>Datum isporuke</th>
+              <th>Vreme isporuke</th>
+              <th>Adresa</th>
+              <th>Kolicina</th>
+              <th colspan="2">Akcije</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pr of porudzbine">
+              <td>{{pr.NAZIV}}</td>
+              <td>{{pr.nazivJela}}</td>
+              <td>{{pr.cena}}</td>
+              <td>{{pr.opis}}</td>
+              <td>{{pr.datumIsporuke}}</td>
+              <td>{{pr.vremeIsporuke}}</td>
+              <td>{{pr.ADRESAISPORUKE}}</td>
+              <td>{{pr.kolicina}}</td>
+              <td><button (click)="izbrisiPorudzbinu(pr.IDPORUDZBINA)" class="btn btn-danger">Obrisi</button></td>
+              <td><a class="btn btn-primary" [routerLink]="['/edit-porudzbina', pr.IDPORUDZBINA]">Edit</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="message == 1">
+          <p>Nema učitanih porudžbina</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-primary btn-block" routerLink="/create-porudzbina"
+        style="background-image: linear-gradient(to right, #e67e22, #f2aa6a, #edc6a3); width: 20%;">Kreiraj porudzbina</a>
+      </div>
+  </div>
